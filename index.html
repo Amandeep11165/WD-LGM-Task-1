@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>animation effect</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="menu">
+        <ul>
+            <li>
+                <span onmouseenter="hoverEnter(0)">
+                      <i class="fa fa-home"></i>
+                </span>
+            </li>
+            <li>
+                <span onmouseenter="hoverEnter(1)">
+                      <i class="fa fa-edit"></i>
+                </span>
+            </li>
+            <li>
+                <span onmouseenter="hoverEnter(2)">
+                      <i class="fa fa-laptop"></i>
+                </span>
+            </li>
+            <li>
+                <span onmouseenter="hoverEnter(3)">
+                      <i class="fa fa-tag"></i>
+                </span>
+            </li>
+            <span class="goo-index" id="goo-index"></span>
+        </ul>
+    </div>
+    <div class="content-wrapper">
+        <div id="screen_0" class="screen visible">
+            <h2>KEEP CALM AND HAPPY</h2>
+            <p>
+                The greatest happiness of life is the conviction that we are loved; loved for ourselves, or rather, loved in spite of ourselves.
+            </p>
+            <div class="image" style="background-image: url(images/simle.jpg)">
+            </div>
+        </div>
+        <div id="screen_1" class="screen">
+            <h2>KEEP TRAVELLING</h2>
+            <p>
+                Don’t tell me how educated you are, tell me how much you have travelled.
+            </p>
+            <div class="image" style="background-image: url(images/coffee.jpg)">
+            </div>
+        </div>
+        <div id="screen_2" class="screen">
+            <h2>WORLD IN 30 DAYS</h2>
+            <p>
+                Music is the language of the spirit. It opens the secret of life bringing peace, abolishing strife.
+            </p>
+            <div class="image" style="background-image: url(images/music.png)">
+            </div>
+        </div>
+        <div id="screen_3" class="screen">
+            <h2>HELP OTHER TO GET THE SAME</h2>
+            <p>
+                The way to get started is to quit talking and begin doing.
+            </p>
+            <div class="image" style="background-image: url(images/desktop.jpg)">
+            </div>
+        </div>
+        <script>
+            let gooIndex = document.getElementById('goo-index');
+            let hoverEnter = index => {
+                gooIndex.style.top = 100 * index + 'px';
+                let allScreens = document.querySelectorAll('.screen');
+                allScreens.forEach(e => {
+                    e.classList.remove('visible');
+                });
+                let nowVisible = document.getElementById('screen_' + index);
+                nowVisible.classList.add('visible');
+            };
+        </script>
+    </div>
+</body>
+
+</html>
